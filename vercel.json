@@ -4,7 +4,7 @@
   "outputDirectory": "dist",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/_astro/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -13,7 +13,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:html|xml|json)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

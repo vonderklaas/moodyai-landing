@@ -1,0 +1,10 @@
+{
+  "projectId": "prj_astro_site",
+  "orgId": "your-org-id",
+  "settings": {
+    "framework": "astro",
+    "buildCommand": null,
+    "devCommand": null,
+    "outputDirectory": null
+  }
+} 
