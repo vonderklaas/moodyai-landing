@@ -2,21 +2,82 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+		
+		<!-- Favicon -->
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<link rel="apple-touch-icon" href="/logo.png" />
+		<link rel="manifest" href="/manifest.json" />
+		
+		<!-- SEO Meta Tags -->
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content="MoodyAI - Your personal mood tracker and mental health companion. Track, analyze, and improve your mood with AI-powered insights." />
+		<meta name="keywords" content="mood tracker, mental health, AI, personal development, emotional wellbeing, psychology, mood analysis, self-care, mindfulness, anxiety management, depression help" />
+		<meta name="author" content="MoodyAI Team" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://moodyai.app/" />
+		<meta property="og:title" content="MoodyAI - Your Personal Mood Tracker" />
+		<meta property="og:description" content="Track, analyze, and improve your mood with AI-powered insights. Take control of your mental wellbeing today." />
+		<meta property="og:image" content="/logo.png" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://moodyai.app/" />
+		<meta property="twitter:title" content="MoodyAI - Your Personal Mood Tracker" />
+		<meta property="twitter:description" content="Track, analyze, and improve your mood with AI-powered insights. Take control of your mental wellbeing today." />
+		<meta property="twitter:image" content="/logo.png" />
+		
+		<title>MoodyAI</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-	/* html,
+<style is:global>
+	html {
+		box-sizing: border-box;
+		font-size: 16px;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
 	body {
 		margin: 0;
-		width: 100%;
-		height: 100%;
-	} */
+		padding: 0;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img, picture, video, canvas, svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	p, h1, h2, h3, h4, h5, h6 {
+		overflow-wrap: break-word;
+	}
+
+	/* Remove default margin */
+	body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		html {
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		html {
+			font-size: 12px;
+		}
+	}
 </style>

@@ -20,7 +20,7 @@ import googlePlay from '../assets/google_play.webp';
       </nav>
     </header>
     <section class='hero'>
-      <section>
+      <div class='hero-content'>
         <h1 class='hero-title'>Improve your mood with few taps.</h1>
         <p class='hero-description'>
           Introducing Moody AI, the AI-powered app that simplifies mood
@@ -41,25 +41,25 @@ import googlePlay from '../assets/google_play.webp';
             />
           </a>
         </div>
-      </section>
+      </div>
       <section class='hero-images'>
         <img
           class='hero-image-one'
           height='420'
           src={demoImageOne.src}
-          alt=''
+          alt='Moody AI screenshot showing mood tracking'
         />
         <img
           class='hero-image-two'
           height='375'
           src={demoImageTwo.src}
-          alt=''
+          alt='Moody AI screenshot showing insights'
         />
       </section>
     </section>
     <footer class='footer'>
       <p>© 2025 Moody AI</p>
-      <div>
+      <div class='footer-links'>
         <a href='#'>Privacy Policy</a>
         <a href='#'>Terms of Service</a>
         <a href='#'>Contact Us</a>
@@ -69,6 +69,7 @@ import googlePlay from '../assets/google_play.webp';
 </div>
 
 <style>
+  /* Base styles */
   .button {
     background-color: #000;
     color: #fff;
@@ -79,6 +80,11 @@ import googlePlay from '../assets/google_play.webp';
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
   }
 
   body {
@@ -95,15 +101,18 @@ import googlePlay from '../assets/google_play.webp';
 
   #background-container {
     font-family: Arial, Roboto, 'Helvetica Neue', 'Arial Nova', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 0.5rem;
   }
 
   .header {
@@ -129,19 +138,31 @@ import googlePlay from '../assets/google_play.webp';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    flex: 1;
   }
 
   .hero-images {
     display: flex;
+    flex: 1;
+    position: relative;
+    justify-content: center;
   }
 
   .hero-image-one {
     transform: rotate(5deg);
+    z-index: 2;
+    position: relative;
   }
 
   .hero-image-two {
     transform: rotate(-5deg);
+    position: absolute;
+    right: 20px;
+    z-index: 1;
   }
 
   .hero-title {
@@ -160,6 +181,12 @@ import googlePlay from '../assets/google_play.webp';
   .app-stores {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .app-stores img {
+    max-width: 100%;
+    height: auto;
   }
 
   .footer {
@@ -170,10 +197,127 @@ import googlePlay from '../assets/google_play.webp';
     padding: 1rem 0;
     margin-top: 5rem;
     font-size: 13px;
+    text-align: center;
   }
 
-  .footer div {
+  .footer-links {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: 48px;
+    }
+    
+    .hero-description {
+      font-size: 18px;
+    }
+    
+    .hero-image-one {
+      height: 350px;
+      width: auto;
+    }
+    
+    .hero-image-two {
+      height: 320px;
+      width: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+    
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .hero-content {
+      order: 1;
+    }
+    
+    .hero-images {
+      order: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-title {
+      font-size: 40px;
+    }
+    
+    .hero-description {
+      font-size: 16px;
+    }
+    
+    .app-stores {
+      justify-content: center;
+    }
+    
+    .hero-image-one {
+      height: 320px;
+      position: relative;
+      right: 30px;
+    }
+    
+    .hero-image-two {
+      height: 290px;
+      right: -30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .header {
+      padding: 1.5rem 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+    
+    .hero-title {
+      font-size: 32px;
+    }
+    
+    .hero-description {
+      font-size: 16px;
+      margin: 1.5rem 0;
+    }
+    
+    .hero-image-one {
+      height: 240px;
+      right: 20px;
+    }
+    
+    .hero-image-two {
+      height: 220px;
+      right: -20px;
+    }
+    
+    .app-stores {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer {
+      margin-top: 3rem;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
   }
 </style>
